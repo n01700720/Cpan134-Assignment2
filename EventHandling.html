@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+    <style>
+        button {
+            transition: background-color 0.3s ease;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="colorButton">Click Me!</button>
+    <script>
+        const button = document.getElementById("colorButton");
+
+        button.addEventListener("click", () => {
+            alert("Button clicked!");
+            const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+            button.style.backgroundColor = randomColor;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid black;
+            margin: 10px;
+            background-color: lightgray;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">Click or hover over me!</div>
+    <script>
+        const box = document.getElementById("box");
+
+        // Change background color on click
+        box.addEventListener("click", () => {
+            box.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+        });
+
+        // Change border color on hover
+        box.addEventListener("mouseover", () => {
+            box.style.borderColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+        });
+
+        // Reset border color on mouse leave
+        box.addEventListener("mouseout", () => {
+            box.style.borderColor = "black";
+        });
+    </script>
+</body>
+</html>
